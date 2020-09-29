@@ -2,16 +2,17 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import Navbar from '../Components/Navbar';
 
-import { ModalContainer, Overlay, Grid } from './Modal.styles';
+import { ModalContainer, Overlay, Grid, Gallery } from './Modal.styles';
 
-const Modal = ({ open, closeModal, children }) => {
+const Modal = ({ open, closeModal, children, sections }) => {
   return (
     open &&
     createPortal(
       <>
         <Overlay onClick={closeModal} />
         <ModalContainer id="portal-container">
-          <Navbar />
+          <Navbar sections={sections} closeModal={closeModal} />
+          <Gallery id="gallery" />
           <Grid>{children}</Grid>
         </ModalContainer>
       </>,

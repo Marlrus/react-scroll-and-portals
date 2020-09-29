@@ -9,6 +9,7 @@ export const ModalContainer = styled.div`
   background-color: white;
   z-index: 1000;
   overflow-y: scroll;
+  width: 70%;
 `;
 
 export const Overlay = styled.div`
@@ -24,4 +25,11 @@ export const Overlay = styled.div`
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
+`;
+
+export const Gallery = styled.div`
+  height: 500px;
+  background-image: url('https://cdn2.hubspot.net/hubfs/2486333/administrador-edificio.jpg');
+  background-position: center;
+  background-size: cover;
 `;

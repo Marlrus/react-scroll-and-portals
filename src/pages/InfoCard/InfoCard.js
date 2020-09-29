@@ -2,39 +2,20 @@ import React from 'react';
 import Section from '../../Components/Section';
 import dummyText from './DummyText';
 
-const InfoCard = () => {
+const InfoCard = ({ sections }) => {
   return (
     <div className="Modal">
-      <Section
-        title="Section 1"
-        subtitle={dummyText}
-        dark={true}
-        id="section1"
-      />
-      <Section
-        title="Section 2"
-        subtitle={dummyText}
-        dark={false}
-        id="section2"
-      />
-      <Section
-        title="Section 3"
-        subtitle={dummyText}
-        dark={true}
-        id="section3"
-      />
-      <Section
-        title="Section 4"
-        subtitle={dummyText}
-        dark={false}
-        id="section4"
-      />
-      <Section
-        title="Section 5"
-        subtitle={dummyText}
-        dark={true}
-        id="section5"
-      />
+      {sections.map(
+        (section, i) =>
+          section !== 'gallery' && (
+            <Section
+              title={section.toUpperCase()}
+              subtitle={dummyText}
+              dark={i % 2 === 0 ? false : true}
+              id={section}
+            />
+          )
+      )}
     </div>
   );
 };
